@@ -1,0 +1,41 @@
+%d-flex{
+    display:flex;
+    flex-wrap: wrap;
+}
+@mixin bgc_br_pad($bgc, $br, $pad) {
+    background-color: $bgc;
+    border-radius: $br;
+    padding: $pad;
+}
+
+
+.content{
+    @extend %d-flex;
+    @include bgc_br_pad(#5719d8, 10px, 10px);
+    align-items: center;
+    height: 95vh;
+    width: 250px;
+    background-color: #5719d8;
+    border-radius: 10px;
+}
+.content_inner{
+    @extend %d-flex;
+    @include bgc_br_pad(white, 8px, 6px);
+    flex-direction: column;
+    justify-content: start;
+    height: 94vh;
+    width: 240px;
+    margin: 0 auto;
+    box-shadow: 0 0 17px gray;
+}
+.link{
+    @include bgc_br_pad(#5719d8, 6px, 6px);
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid  #5719d8;
+    color: white;
+    &:hover{
+        background-color: slateblue;
+    }
+}
